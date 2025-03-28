@@ -19,7 +19,6 @@
 // Execute `rustlings hint errors2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
 
 use std::fmt::Display;
 use std::num::ParseIntError;
@@ -31,15 +30,7 @@ pub fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
     let qty = item_quantity.parse::<i32>();
     match qty {
         Ok(qty) => Ok(qty * cost_per_item + processing_fee),
-        Err(e) => e.fmt("invalid digit found in string")
-        // Err(err) => match err.kind() {
-        //     ParseIntError => {
-        //         println!("我的天");
-        //         // ParseIntError::kind("invalid digit found in string")
-        //         panic!("invalid digit found in string")
-        //     },
-        //     other_error => panic!("Problem opening the file: {:?}", other_error),
-        // }
+        Err(e) => Err(e)
     }
 
 
