@@ -19,6 +19,7 @@
 // Execute `rustlings hint errors2` or use the `hint` watch subcommand for a
 // hint.
 
+
 use std::fmt::Display;
 use std::num::ParseIntError;
 use std::io::{Error, ErrorKind};
@@ -31,6 +32,7 @@ pub fn total_cost(item_quantity: &str) -> Result< i32, ParseIntError> {
     match qty {
         Ok(q) => {Ok(q * cost_per_item + processing_fee)},
         Err(e) => Err(ParseIntError::from(e))
+
     }
 
 }

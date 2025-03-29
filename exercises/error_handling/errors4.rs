@@ -19,11 +19,10 @@ impl PositiveNonzeroInteger {
         if value == 0 {
             Err(CreationError::Zero)
         }else if value < 0{
-            Err(crate::CreationError::Negative)
-        }else{
+            Err(CreationError::Negative)
+        }else {
             Ok(PositiveNonzeroInteger(value as u64))
         }
-
     }
 }
 
